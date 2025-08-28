@@ -1,0 +1,13 @@
+<div class="reset-password-container">
+    <h2>Reset Your Password</h2>
+    <form (ngSubmit)="onSubmit()">
+      <input type="hidden"/>
+      <input type="hidden"/>
+  
+      <label for="newPassword">New Password</label>
+      <input type="password" name="newPassword" [(ngModel)]="resetComp.NewPassword" required />
+  
+      <button type="submit">Reset Password</button>
+    </form>
+  </div>
+  

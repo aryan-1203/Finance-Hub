@@ -1,0 +1,13 @@
+<div class="error-container animate__animated animate__fadeIn">
+    <div class="error-content text-center animate__animated animate__zoomIn shadow-lg p-5 rounded">
+      <img src="assets/navbar/Logo.jpg" alt="Logo" class="error-logo animate__animated animate__bounceIn mb-4" />
+      
+      <h2 class="animate__animated animate__fadeInDown mb-3">{{ messageTitle }}</h2>
+      <p class="animate__animated animate__fadeInUp mb-4">{{ messageBody }}</p>
+      
+      <button class="back-button btn btn-success animate__animated animate__pulse animate__infinite" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i> Go Back
+      </button>
+    </div>
+  </div>
+  

@@ -1,0 +1,33 @@
+<div *ngIf="isLoggedIn()">
+  <app-managernav></app-managernav>
+
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h1>Manage Savings Plans</h1>
+      <button class="add-btn btn btn-outline-primary m-3" routerLink="/addsavingplan">
+        <i class="fas fa-plus"></i> Add New Plan
+      </button>
+    </div>
+
+    <ag-grid-angular
+      style="width: 100%; height: 500px;"
+      class="ag-theme-alpine"
+      [rowData]="savingsPlans"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [pagination]="true"
+      [paginationPageSize]="4"
+      rowSelection="single"
+      (cellClicked)="onCellClicked($event)">
+    </ag-grid-angular>
+    <div style="max-width: 600px; margin: 2rem auto;">
+      <canvas id="pieChart"></canvas>
+    </div>
+    
+  </div>
+</div>
+
+
+<div *ngIf="!isLoggedIn()">
+  <app-error></app-error>
+</div>

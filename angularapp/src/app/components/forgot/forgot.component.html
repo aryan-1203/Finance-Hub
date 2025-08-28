@@ -1,0 +1,5 @@
+<form (ngSubmit)="sendRequest()">
+    <label for="EmailAddress">Enter Email Address</label><br>
+    <input type="email" name="Email" id="Email" placeholder="Enter Email here..." [(ngModel)]="emailAdd.Email" required><br>
+    <button type="submit">Send link</button>
+</form>

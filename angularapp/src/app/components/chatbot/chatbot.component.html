@@ -1,0 +1,29 @@
+<!-- Floating Robot Icon -->
+<div class="chatbot-launcher" (click)="toggleChat()" title="How can I help you in this start?">
+  <img src="assets/robot.png" alt="Chatbot" />
+</div>
+
+<!-- Chat Window -->
+<div class="chatbot-container" [class.open]="isOpen">
+  <div class="chatbot-header">
+    <span>🤖 AI Chatbot</span>
+    <button class="close-btn" (click)="toggleChat()">×</button>
+  </div>
+  
+
+  <div class="chatbot-body">
+    <div class="messages">
+      <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+        <img [src]="msg.sender === 'user' ? 'assets/profile.png' : 'assets/bot.png'" class="avatar" />
+        <div class="message-text">{{ msg.text }}</div>
+      </div>
+
+      <!-- Loader -->
+      <div *ngIf="loading" class="loader">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <input [(ngModel)]="userInput" (keyup.enter)="sendMessage()" placeholder="Type your message..." />
+  </div>
+</div>
